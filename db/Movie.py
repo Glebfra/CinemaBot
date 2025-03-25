@@ -1,4 +1,5 @@
-from peewee import CharField, ForeignKeyField
+from peewee import CharField
+
 from db.BaseModel import BaseModel, db
 
 
