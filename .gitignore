@@ -287,4 +287,5 @@ poetry.toml
 pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm
-/db/sqlite.db
+.data/
+/google_api/credentials_service.json

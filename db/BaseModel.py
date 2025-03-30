@@ -3,7 +3,7 @@ import os.path
 from peewee import CharField, Model, SqliteDatabase
 
 path = os.path.dirname(os.path.realpath(__file__))
-db = SqliteDatabase(f'{path}/sqlite.db')
+db = SqliteDatabase(f'{path}/../.data/sqlite.db')
 
 
 class BaseModel(Model):
