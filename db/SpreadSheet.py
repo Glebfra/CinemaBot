@@ -5,6 +5,7 @@ from db.BaseModel import BaseModel, db
 
 class SpreadSheet(BaseModel):
     spreadsheet_id: str = CharField()
+    url: str = CharField()
 
 
 class SpreadSheetRange(BaseModel):
