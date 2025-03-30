@@ -1,10 +1,12 @@
 from peewee import CharField, ForeignKeyField
 
 from db.BaseModel import BaseModel, db
+from db.SpreadSheet import SpreadSheetRange
 
 
 class Movie(BaseModel):
-    name = CharField()
+    name: str = CharField()
+    spreadsheet_range: SpreadSheetRange = ForeignKeyField(SpreadSheetRange, backref='movies')
 
 
 class Material(BaseModel):

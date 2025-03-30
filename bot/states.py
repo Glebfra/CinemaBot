@@ -5,6 +5,7 @@ class SpreadsheetStates(StatesGroup):
     Spreadsheets = State()
     AddSpreadsheets = State()
     EditSpreadsheets = State()
+    DeleteSpreadsheets = State()
 
 
 class DefaultStates(StatesGroup):

@@ -1,23 +1,26 @@
 from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup
 
-
-def get_inline_keyboard():
-    keyword = InlineKeyboardMarkup()
-    keyword.add(InlineKeyboardButton('Подробнее', callback_data='detailed_movies_btn'))
-    return keyword
+SPREADSHEETS_KEYBOARD_NAMES = ['Добавить', 'Редактировать', 'Удалить', 'Отмена']
+DEFAULT_KEYBOARD_NAMES = ['Фильмы', 'Таблицы']
+CANCEL_KEYBOARD_NAMES = ['Отмена']
 
 
 def get_default_keyboard():
     keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
-    button_names = ['Фильмы', 'Таблицы']
-    buttons = [KeyboardButton(name) for name in button_names]
+    buttons = [KeyboardButton(name) for name in DEFAULT_KEYBOARD_NAMES]
+    keyboard.add(*buttons)
+    return keyboard
+
+
+def get_spreadsheets_keyboard():
+    keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
+    buttons = [KeyboardButton(name) for name in SPREADSHEETS_KEYBOARD_NAMES]
     keyboard.add(*buttons)
     return keyboard
 
 
 def get_cancel_keyboard():
     keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
-    button_names = ['Отмена']
-    buttons = [KeyboardButton(name) for name in button_names]
+    buttons = [KeyboardButton(name) for name in CANCEL_KEYBOARD_NAMES]
     keyboard.add(*buttons)
     return keyboard
