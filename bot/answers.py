@@ -9,5 +9,10 @@ add_spreadsheets_spreadsheet_id_error = 'Невозможно найти id та
 add_spreadsheets_exists_error = 'Данная таблица уже существует\n'
 add_spreadsheets_success = 'Новая таблица добавлена успешно\n'
 
-edit_spreadsheets = ''
-delete_spreadsheets = ''
+edit_spreadsheets = 'Напишите номер таблицы, которую хотите изменить\n'
+edit_spreadsheets_numeric_error = 'Номер таблицы должен быть числом\n'
+edit_spreadsheets_spreadsheet_id_error = 'Таблицы с таким номером не найдено\n'
+
+edit_spreadsheet = 'Выберите поле, которое надо изменить\n'
+
+delete_spreadsheets = 'Напишите номер таблицы, которую хотите удалить\n'

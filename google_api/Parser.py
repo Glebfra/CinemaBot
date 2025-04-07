@@ -1,5 +1,4 @@
-from db.Movie import Material, Movie
-from db.SpreadSheet import SpreadSheet
+from db.models import Material, Movie, SpreadSheet
 from google_api.GoogleSpreadSheet import GoogleSpreadSheet
 
 

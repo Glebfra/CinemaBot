@@ -2,7 +2,7 @@ import apiclient
 import httplib2
 from oauth2client.service_account import ServiceAccountCredentials
 
-from db.SpreadSheet import SpreadSheet
+from db.models import SpreadSheet
 
 CREDENTIALS_FILE = 'credentials_service.json'
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
@@ -19,13 +19,15 @@ class GoogleSpreadSheet:
 
     @classmethod
     def create_from_id(cls, ID):
-        credentials: ServiceAccountCredentials = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_FILE, SCOPES)
+        credentials: ServiceAccountCredentials = ServiceAccountCredentials.from_json_keyfile_name(
+            CREDENTIALS_FILE, SCOPES
+            )
         http_auth: httplib2.Http = credentials.authorize(httplib2.Http())
         service = apiclient.discovery.build('sheets', 'v4', http=http_auth)
         return cls(service, ID)
 
     def get_values(self, ranges) -> dict:
-        return self.service.Spreadsheets().values().batchGet(spreadsheetId=self.ID, ranges=ranges).execute()
+        return self.service.spreadsheets().values().batchGet(spreadsheetId=self.ID, ranges=ranges).execute()
 
 
 if __name__ == '__main__':
